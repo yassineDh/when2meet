@@ -28,24 +28,30 @@ function CalendarLayout() {
   };
 
   return (
-    <div>
-      <h1>Demo App</h1>
-      <FullCalendar
-        editable
-        selectable
-        headerToolbar={{
-          start: "today prev next",
-          end: "dayGridMonth dayGridWeek dayGridDay",
-        }}
-        plugins={[dayGridPlugin, interactionPlugin]}
-        views={["dayGridMonth", "dayGridWeek", "dayGridDay"]}
-        initialView="dayGridMonth"
-        weekends={false}
-        events={events}
-        select={handleSelect}
-        eventContent={(info) => <EventItem info={info} />}
-      />
-    </div>
+    <>
+      <div className="row">
+        <h1 className="col-4 text-center mx-auto">Demo App</h1>
+      </div>
+      <div className="row">
+        <div className="col-8 mx-auto">
+          <FullCalendar
+            editable
+            selectable
+            headerToolbar={{
+              start: "today prev next",
+              end: "dayGridMonth dayGridWeek dayGridDay",
+            }}
+            plugins={[dayGridPlugin, interactionPlugin]}
+            views={["dayGridMonth", "dayGridWeek", "dayGridDay"]}
+            initialView="dayGridMonth"
+            weekends={false}
+            events={events}
+            select={handleSelect}
+            eventContent={(info) => <EventItem info={info} />}
+          />
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -57,6 +63,5 @@ const EventItem = ({ info }) => {
     </div>
   );
 };
-
 
 export default CalendarLayout;

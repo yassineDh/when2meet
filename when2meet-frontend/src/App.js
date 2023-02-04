@@ -3,7 +3,7 @@ import CalendarLayout from './components/CalendarLayout';
 
 function App() {
   return (
-    <div>
+    <div className="container-fluid">
       <CalendarLayout />
     </div>
   );
