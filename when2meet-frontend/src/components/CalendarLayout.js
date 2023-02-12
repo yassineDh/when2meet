@@ -39,10 +39,11 @@ function CalendarLayout() {
             selectable
             headerToolbar={{
               start: "today prev next",
-              end: "dayGridMonth dayGridWeek dayGridDay",
+              center: 'title',
+              end: "dayGridMonth",
             }}
-            plugins={[dayGridPlugin, interactionPlugin]}
-            views={["dayGridMonth", "dayGridWeek", "dayGridDay"]}
+            plugins={[timeGridPlugin,dayGridPlugin, interactionPlugin]}
+            views={["dayGridMonth"]}
             initialView="dayGridMonth"
             weekends={false}
             events={events}
